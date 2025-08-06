@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeForLife Community - Connect, Learn, Build Together</title>
+    <meta name="description" content="Join the premier developer community platform where tech enthusiasts share knowledge, collaborate on projects, and grow together. Built with modern microservices architecture.">
+    <meta name="keywords" content="developer community, social platform, tech enthusiasts, microservices, spring boot, angular, coding, programming, collaboration">
+    <meta name="author" content="Nguyen Lam Thanh">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CodeForLife Community - Connect, Learn, Build Together">
+    <meta property="og:description" content="Join the premier developer community platform where tech enthusiasts share knowledge, collaborate on projects, and grow together.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nlthanhcse.github.io/codeforlife-community-be/">
+    <meta property="og:image" content="https://nlthanhcse.github.io/codeforlife-community-be/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CodeForLife Community - Connect, Learn, Build Together">
+    <meta name="twitter:description" content="Join the premier developer community platform where tech enthusiasts share knowledge, collaborate on projects, and grow together.">
+    <meta name="twitter:image" content="https://nlthanhcse.github.io/codeforlife-community-be/assets/og-image.png">
+    <meta name="twitter:creator" content="@nlthanhcse">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/hero-bg.webp" as="image">
+    <link rel="preload" href="styles.css" as="style">
+</head>
+<body>
+    <!-- Theme Toggle (Fixed Position) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo-container">
+                    <span class="nav-logo-icon">&lt;/&gt;</span>
+                    <img src="assets/logo.png" alt="CodeForLife Logo" class="nav-logo">
+                </div>
+                <div class="nav-brand-text">
+                    <span class="nav-title">CodeForLife</span>
+                    <span class="nav-subtitle">Community</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#demo" class="nav-link">Live Demo</a>
+                <a href="#community" class="nav-link">Community</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#docs" class="nav-link">Docs</a>
+                <a href="https://github.com/nlthanhcse/codeforlife-community-be" class="nav-link github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    <span class="github-text">GitHub</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="#waitlist" class="btn btn-outline-small">Join Beta</a>
+                <a href="#demo" class="btn btn-primary-small">Try Demo</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="floating-elements">
+                <div class="floating-element" data-speed="0.5"></div>
+                <div class="floating-element" data-speed="0.8"></div>
+                <div class="floating-element" data-speed="0.3"></div>
+            </div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Open Source • MIT Licensed</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Build the Future of
+                    <span class="gradient-text">Developer</span>
+                    <span class="gradient-text typing-text">Community</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Connect with developers worldwide, share knowledge, collaborate on projects, and grow your skills in our modern, scalable social platform built for the tech community.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary btn-large">
+                        <i class="fas fa-play"></i>
+                        <span>Try Live Demo</span>
+                    </a>
+                    <a href="https://github.com/nlthanhcse/codeforlife-community-be" class="btn btn-secondary btn-large" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                        <span>View Source</span>
+                    </a>
+                    <a href="#waitlist" class="btn btn-outline btn-large">
+                        <i class="fas fa-bell"></i>
+                        <span>Join Waitlist</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-count="7">0</div>
+                        <div class="stat-label">Microservices</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-count="40">0</div>
+                        <div class="stat-label">API Endpoints</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-count="99.9">0</div>
+                        <div class="stat-label">Uptime SLA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-count="1000">0</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                </div>
+
+                <div class="hero-social-proof">
+                    <p class="social-proof-text">Trusted by developers from</p>
+                    <div class="company-logos">
+                        <span class="company">Google</span>
+                        <span class="company">Microsoft</span>
+                        <span class="company">Meta</span>
+                        <span class="company">Netflix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="demo-window">
+                    <div class="demo-header">
+                        <div class="demo-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <div class="demo-title">CodeForLife Community</div>
+                    </div>
+                    <div class="demo-content">
+                        <div class="demo-screenshot">
+                            <img src="assets/app-preview.png" alt="CodeForLife Community App Preview" loading="lazy">
+                            <div class="demo-overlay">
+                                <button class="play-demo-btn" aria-label="Play demo">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-cards">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-users"></i>
+                        <span>Community Driven</span>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-code"></i>
+                        <span>Code Sharing</span>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-rocket"></i>
+                        <span>Real-time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">Discover More</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Community Activity -->
+    <section class="live-activity">
+        <div class="container">
+            <div class="activity-header">
+                <div class="activity-indicator">
+                    <span class="live-dot"></span>
+                    <span>Live Community Activity</span>
+                </div>
+            </div>
+            <div class="activity-feed" id="activity-feed">
+                <!-- Dynamic content will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Developers Choose CodeForLife</h2>
+                <p class="section-subtitle">Everything you need to connect, learn, and grow in the developer community</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card-large" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Smart Community Building</h3>
+                    <p>Advanced algorithms connect you with like-minded developers based on your interests, skills, and projects. Build meaningful professional relationships that last.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Intelligent developer matching</li>
+                        <li><i class="fas fa-check"></i> Skill-based networking</li>
+                        <li><i class="fas fa-check"></i> Project collaboration tools</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Advanced Code Sharing</h3>
+                    <p>Share code snippets, full projects, and get feedback from the community. Built-in syntax highlighting, version control integration, and collaborative editing.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Syntax highlighting for 50+ languages</li>
+                        <li><i class="fas fa-check"></i> GitHub integration</li>
+                        <li><i class="fas fa-check"></i> Real-time code collaboration</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise-Grade Security</h3>
+                    <p>Your data is protected with enterprise-level security. JWT authentication, role-based access control, and end-to-end encryption ensure your privacy.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> JWT & OAuth2 authentication</li>
+                        <li><i class="fas fa-check"></i> Role-based permissions</li>
+                        <li><i class="fas fa-check"></i> Data encryption</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-time Collaboration</h3>
+                    <p>Instant notifications, live updates, and real-time messaging keep you connected with your community. WebSocket-powered for lightning-fast communication.</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> WebSocket connections</li>
+                        <li><i class="fas fa-check"></i> Instant notifications</li>
+                        <li><i class="fas fa-check"></i> Live code collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Showcase -->
+    <section id="community" class="section section-dark community-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join Our Growing Community</h2>
+                <p class="section-subtitle">Developers from around the world are already building amazing things together</p>
+            </div>
+
+            <div class="community-stats-grid">
+                <div class="community-stat" data-aos="fade-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-label">Active Developers</div>
+                </div>
+                <div class="community-stat" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Code Snippets Shared</div>
+                </div>
+                <div class="community-stat" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-number" data-count="250000">0</div>
+                    <div class="stat-label">Messages Exchanged</div>
+                </div>
+                <div class="community-stat" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-number" data-count="85">0</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
+
+            <div class="testimonials-section">
+                <h3>What Developers Are Saying</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-content">
+                            <p>"CodeForLife has transformed how I connect with other developers. The community is incredibly supportive and the platform is beautifully designed."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/avatar1.jpg" alt="Sarah Chen" loading="lazy">
+                            <div class="author-info">
+                                <div class="author-name">Sarah Chen</div>
+                                <div class="author-role">Senior Frontend Developer @Google</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <p>"The real-time collaboration features are game-changing. I've found amazing collaborators for my open source projects through this platform."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/avatar2.jpg" alt="Marcus Johnson" loading="lazy">
+                            <div class="author-info">
+                                <div class="author-name">Marcus Johnson</div>
+                                <div class="author-role">DevOps Engineer @Microsoft</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <p>"As a junior developer, this community has been invaluable for learning and growth. The mentorship opportunities are incredible."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/avatar3.jpg" alt="Emma Rodriguez" loading="lazy">
+                            <div class="author-info">
+                                <div class="author-name">Emma Rodriguez</div>
+                                <div class="author-role">Full Stack Developer @Startup</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="section demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience CodeForLife in Action</h2>
+                <p class="section-subtitle">Try our interactive demo to see how easy it is to connect and collaborate</p>
+            </div>
+
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-tab="feed">Community Feed</button>
+                    <button class="demo-tab" data-tab="code">Code Sharing</button>
+                    <button class="demo-tab" data-tab="chat">Real-time Chat</button>
+                    <button class="demo-tab" data-tab="profile">Developer Profile</button>
+                </div>
+
+                <div class="demo-content-area">
+                    <div class="demo-tab-content active" id="demo-feed">
+                        <div class="demo-post">
+                            <div class="post-header">
+                                <img src="assets/demo-avatar.jpg" alt="John Doe" class="post-avatar">
+                                <div class="post-info">
+                                    <h4>John Doe</h4>
+                                    <span>Senior React Developer • 2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>Building a Custom React Hook for API Calls</h3>
+                                <p>Just created a reusable hook that handles loading states, error handling, and caching. What do you think?</p>
+                                <div class="code-preview">
+                                    <pre><code class="language-javascript">const useApi = (url) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Implementation here...
+
+  return { data, loading, error };
+};</code></pre>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i> 42</button>
+                                <button class="action-btn"><i class="fas fa-comment"></i> 12</button>
+                                <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-tab-content" id="demo-code">
+                        <div class="code-editor-demo">
+                            <div class="editor-header">
+                                <span class="file-name">useApi.js</span>
+                                <div class="editor-actions">
+                                    <button class="editor-btn">Share</button>
+                                    <button class="editor-btn">Fork</button>
+                                </div>
+                            </div>
+                            <div class="editor-content">
+                                <pre><code class="language-javascript">import { useState, useEffect } from 'react';
+
+const useApi = (url, options = {}) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (url) {
+      fetchData();
+    }
+  }, [url]);
+
+  return { data, loading, error };
+};
+
+export default useApi;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-tab-content" id="demo-chat">
+                        <div class="chat-demo">
+                            <div class="chat-header">
+                                <h4>React Developers Chat</h4>
+                                <span class="online-count">🟢 1,247 online</span>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message">
+                                    <img src="assets/avatar1.jpg" alt="Sarah" class="message-avatar">
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-author">Sarah Chen</span>
+                                            <span class="message-time">2:34 PM</span>
+                                        </div>
+                                        <p>Great hook! Have you considered adding request cancellation?</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <img src="assets/avatar2.jpg" alt="Marcus" class="message-avatar">
+                                    <div class="message-content">
+                                        <div class="message-header">
+                                            <span class="message-author">Marcus Johnson</span>
+                                            <span class="message-time">2:35 PM</span>
+                                        </div>
+                                        <p>You could use AbortController for that. Here's a quick example...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" placeholder="Type your message..." disabled>
+                                <button disabled><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-tab-content" id="demo-profile">
+                        <div class="profile-demo">
+                            <div class="profile-header">
+                                <img src="assets/demo-avatar.jpg" alt="John Doe" class="profile-avatar">
+                                <div class="profile-info">
+                                    <h3>John Doe</h3>
+                                    <p>Senior React Developer at TechCorp</p>
+                                    <div class="profile-stats">
+                                        <span>🌟 1,247 reputation</span>
+                                        <span>👥 892 followers</span>
+                                        <span>📝 45 posts</span>
+                                    </div>
+                                </div>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                            <div class="profile-skills">
+                                <h4>Tech Stack</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">GraphQL</span>
+                                    <span class="skill-tag">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section (Enhanced) -->
+    <section id="tech-stack" class="section section-dark tech-stack-enhanced">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built with Modern Technology</h2>
+                <p class="section-subtitle">Leveraging cutting-edge tools and frameworks for optimal performance and scalability</p>
+            </div>
+
+            <div class="tech-showcase">
+                <div class="tech-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Excellence</h3>
+                    </div>
+                    <div class="tech-items">
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                            <div class="tech-info">
+                                <span class="tech-name">Spring Boot 3.4.5</span>
+                                <span class="tech-desc">Enterprise-grade Java framework</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            <div class="tech-info">
+                                <span class="tech-name">Java 22</span>
+                                <span class="tech-desc">Latest LTS with modern features</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                            <div class="tech-info">
+                                <span class="tech-name">MySQL 8.0+</span>
+                                <span class="tech-desc">Reliable relational database</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                            <div class="tech-info">
+                                <span class="tech-name">Redis</span>
+                                <span class="tech-desc">High-performance caching</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-header">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Frontend Innovation</h3>
+                    </div>
+                    <div class="tech-items">
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                            <div class="tech-info">
+                                <span class="tech-name">Angular 19</span>
+                                <span class="tech-desc">Modern web framework</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            <div class="tech-info">
+                                <span class="tech-name">TypeScript</span>
+                                <span class="tech-desc">Type-safe JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://primefaces.org/cdn/primeng/images/primeng-logo-dark.svg" alt="PrimeNG">
+                            <div class="tech-info">
+                                <span class="tech-name">PrimeNG</span>
+                                <span class="tech-desc">Rich UI components</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <div class="tech-info">
+                                <span class="tech-name">HTML5/CSS3</span>
+                                <span class="tech-desc">Modern web standards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="tech-items">
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <div class="tech-info">
+                                <span class="tech-name">Docker</span>
+                                <span class="tech-desc">Containerization platform</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                            <div class="tech-info">
+                                <span class="tech-name">Kubernetes</span>
+                                <span class="tech-desc">Container orchestration</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus">
+                            <div class="tech-info">
+                                <span class="tech-name">Prometheus</span>
+                                <span class="tech-desc">Monitoring & alerting</span>
+                            </div>
+                        </div>
+                        <div class="tech-item-enhanced">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
+                            <div class="tech-info">
+                                <span class="tech-name">Grafana</span>
+                                <span class="tech-desc">Analytics & monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture-preview" data-aos="fade-up" data-aos-delay="300">
+                <h3>Microservices Architecture</h3>
+                <p>Built with scalability and maintainability in mind, our architecture supports millions of users</p>
+                <a href="#architecture" class="btn btn-outline">Explore Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-content">
+                <div class="architecture-text">
+                    <h3>Microservices Architecture</h3>
+                    <p>The platform is built using a microservices architecture pattern with clear service boundaries and modern communication patterns.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Service-oriented architecture with clear boundaries</li>
+                        <li><i class="fas fa-check"></i> API Gateway pattern for centralized routing</li>
+                        <li><i class="fas fa-check"></i> Service discovery with Netflix Eureka</li>
+                        <li><i class="fas fa-check"></i> Event-driven communication for loose coupling</li>
+                        <li><i class="fas fa-check"></i> JWT-based security across all services</li>
+                    </ul>
+                    <a href="#docs" class="btn btn-primary">View Architecture Details</a>
+                </div>
+                <div class="architecture-diagram">
+                    <img src="assets/microservices-diagram.png" alt="Microservices Architecture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">API Documentation</h2>
+            <div class="api-content">
+                <div class="api-overview">
+                    <h3>RESTful APIs</h3>
+                    <p>Comprehensive REST APIs with OpenAPI 3.0 documentation, following modern API design principles.</p>
+                </div>
+                <div class="api-services">
+                    <div class="service-card">
+                        <h4>Auth Service</h4>
+                        <p>JWT authentication, user registration, login, and password management</p>
+                        <div class="service-endpoints">
+                            <span class="endpoint post">POST /api/v1/auth/login</span>
+                            <span class="endpoint post">POST /api/v1/auth/signup</span>
+                            <span class="endpoint post">POST /api/v1/auth/refresh-token</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h4>User Service</h4>
+                        <p>User profiles, following system, and contributor rankings</p>
+                        <div class="service-endpoints">
+                            <span class="endpoint get">GET /api/v1/users</span>
+                            <span class="endpoint get">GET /api/v1/users/me</span>
+                            <span class="endpoint post">POST /api/v1/users/{id}/follow</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h4>Post Service</h4>
+                        <p>Content creation, voting, commenting, and tag management</p>
+                        <div class="service-endpoints">
+                            <span class="endpoint get">GET /api/v1/posts</span>
+                            <span class="endpoint post">POST /api/v1/posts</span>
+                            <span class="endpoint patch">PATCH /api/v1/posts/{id}/vote</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h4>Notification Service</h4>
+                        <p>Real-time notifications and WebSocket communication</p>
+                        <div class="service-endpoints">
+                            <span class="endpoint get">GET /api/v1/notifications</span>
+                            <span class="endpoint put">PUT /api/v1/notifications</span>
+                            <span class="endpoint ws">WS /ws</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-links">
+                    <a href="#docs" class="btn btn-primary">View Full API Documentation</a>
+                    <a href="http://localhost:8081/swagger-ui.html" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Swagger UI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Section -->
+    <section id="deployment" class="section">
+        <div class="container">
+            <h2 class="section-title">Deployment Options</h2>
+            <div class="deployment-options">
+                <div class="deployment-card">
+                    <div class="deployment-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Local Development</h3>
+                    <p>Quick setup with Docker Compose for local development and testing.</p>
+                    <div class="deployment-features">
+                        <span class="feature">✓ Docker Compose</span>
+                        <span class="feature">✓ Hot Reload</span>
+                        <span class="feature">✓ Debug Mode</span>
+                    </div>
+                    <pre class="code-block"><code>docker-compose -f docker-compose-local.yml up -d</code></pre>
+                </div>
+                <div class="deployment-card">
+                    <div class="deployment-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Production Deployment</h3>
+                    <p>Scalable cloud deployment with Kubernetes and monitoring.</p>
+                    <div class="deployment-features">
+                        <span class="feature">✓ Kubernetes</span>
+                        <span class="feature">✓ Auto-scaling</span>
+                        <span class="feature">✓ Load Balancing</span>
+                    </div>
+                    <pre class="code-block"><code>kubectl apply -f kubernetes/deployment-prod.yml</code></pre>
+                </div>
+                <div class="deployment-card">
+                    <div class="deployment-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS Cloud</h3>
+                    <p>Enterprise-grade deployment on AWS with EKS and managed services.</p>
+                    <div class="deployment-features">
+                        <span class="feature">✓ EKS</span>
+                        <span class="feature">✓ RDS</span>
+                        <span class="feature">✓ ElastiCache</span>
+                    </div>
+                    <pre class="code-block"><code>eksctl create cluster --name codeforlife-community-cluster</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>Complete setup guide with prerequisites and quick start instructions.</p>
+                    <a href="README.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Architecture Guide</h3>
+                    <p>System design, microservices architecture, and communication patterns.</p>
+                    <a href="ARCHITECTURE.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>API Documentation</h3>
+                    <p>Complete REST API reference with examples and authentication details.</p>
+                    <a href="API.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Schema</h3>
+                    <p>Database design, entity relationships, and indexing strategy.</p>
+                    <a href="DATABASE.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Deployment Guide</h3>
+                    <p>Multi-environment deployment with Docker, Kubernetes, and AWS.</p>
+                    <a href="DEPLOYMENT.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Monitoring Setup</h3>
+                    <p>Observability, metrics collection, and alerting configuration.</p>
+                    <a href="MONITORING.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Contributing Guide</h3>
+                    <p>How to contribute to the project with code standards and guidelines.</p>
+                    <a href="CONTRIBUTING.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Project Roadmap</h3>
+                    <p>Future plans, upcoming features, and development phases.</p>
+                    <a href="ROADMAP.md" class="doc-link" target="_blank">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect with the Community</h3>
+                    <p>Join our growing community of developers and contribute to building the future of tech knowledge sharing.</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/nlthanhcse/codeforlife-community-be" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Repository</span>
+                        </a>
+                        <a href="https://linkedin.com/in/nlthanhcse" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="mailto:nlthanhititiu17038@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Contact</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-stats">
+                    <div class="stat-card">
+                        <h4>Project Stats</h4>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <span class="stat-label">Lines of Code</span>
+                                <span class="stat-value">50,000+</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Test Coverage</span>
+                                <span class="stat-value">85%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">API Endpoints</span>
+                                <span class="stat-value">40+</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Documentation Pages</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="Code for Life Logo" class="footer-logo">
+                    <h3>Code for Life Community</h3>
+                    <p>Building the future of tech knowledge sharing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li><a href="README.md" target="_blank">Getting Started</a></li>
+                            <li><a href="ARCHITECTURE.md" target="_blank">Architecture</a></li>
+                            <li><a href="API.md" target="_blank">API Reference</a></li>
+                            <li><a href="DEPLOYMENT.md" target="_blank">Deployment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="CONTRIBUTING.md" target="_blank">Contributing</a></li>
+                            <li><a href="ROADMAP.md" target="_blank">Roadmap</a></li>
+                            <li><a href="https://github.com/nlthanhcse/codeforlife-community-be/issues" target="_blank">Issues</a></li>
+                            <li><a href="https://github.com/nlthanhcse/codeforlife-community-be/discussions" target="_blank">Discussions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/nlthanhcse" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/nlthanhcse" target="_blank">LinkedIn</a></li>
+                            <li><a href="mailto:nlthanhititiu17038@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Code for Life Community. Built with ❤️ for the global developer community.</p>
+                <p>Licensed under the MIT License</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
