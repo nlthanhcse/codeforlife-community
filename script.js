@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeDemo();
     initializeLiveActivity();
+    initializeScrollProgress();
+    initializeWaitlist();
     initializePerformanceOptimizations();
     initializeAccessibility();
 
@@ -361,10 +363,13 @@ function initializeDemo() {
     }
 
     function createMessageElement(message) {
+        const avatarColors = ['css-avatar-1', 'css-avatar-2', 'css-avatar-3'];
+        const colorClass = avatarColors[Math.floor(Math.random() * 3)];
+        const initials = message.author.split(' ').map(n => n[0]).join('').substring(0, 2);
         const messageDiv = document.createElement('div');
         messageDiv.className = 'message';
         messageDiv.innerHTML = `
-            <img src="assets/avatar${Math.floor(Math.random() * 3) + 1}.jpg" alt="${message.author}" class="message-avatar">
+            <div class="css-avatar ${colorClass} message-avatar" aria-label="${message.author}">${initials}</div>
             <div class="message-content">
                 <div class="message-header">
                     <span class="message-author">${message.author}</span>
@@ -445,6 +450,76 @@ function initializeLiveActivity() {
     setInterval(showNextActivity, 4000);
 }
 
+// Scroll Progress Bar
+function initializeScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', throttle(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('aria-valuenow', Math.round(progress));
+    }, 16));
+}
+
+// Waitlist Form Handler
+function initializeWaitlist() {
+    const form = document.getElementById('waitlist-form');
+    if (!form) return;
+
+    const nameInput = document.getElementById('waitlist-name');
+    const emailInput = document.getElementById('waitlist-email');
+    const messageEl = document.getElementById('waitlist-message');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+
+        // Clear previous state
+        nameInput.classList.remove('error');
+        emailInput.classList.remove('error');
+        messageEl.className = 'waitlist-message';
+        messageEl.textContent = '';
+
+        // Validate
+        let valid = true;
+        if (!name) { nameInput.classList.add('error'); valid = false; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailInput.classList.add('error');
+            valid = false;
+        }
+
+        if (!valid) {
+            messageEl.className = 'waitlist-message error';
+            messageEl.textContent = 'Please fill in your name and a valid email address.';
+            return;
+        }
+
+        const submitBtn = form.querySelector('.waitlist-submit');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Joining...</span>';
+
+        setTimeout(() => {
+            form.innerHTML = `
+                <div class="waitlist-success">
+                    <i class="fas fa-check-circle"></i>
+                    <p>You're on the list, <strong>${escapeHtml(name)}</strong>! We'll reach out to <strong>${escapeHtml(email)}</strong> when beta opens.</p>
+                </div>
+            `;
+            trackEvent('conversion', 'waitlist_signup', 'success');
+        }, 1200);
+    });
+}
+
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+
 // Performance Optimizations
 function initializePerformanceOptimizations() {
     // Lazy loading for images
@@ -476,18 +551,7 @@ function initializePerformanceOptimizations() {
     }
 
     function preloadCriticalResources() {
-        const criticalImages = [
-            'assets/app-preview.png',
-            'assets/demo-avatar.jpg'
-        ];
-
-        criticalImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
-        });
+        // Images are CSS-generated; no file preloading needed
     }
 
     function registerServiceWorker() {

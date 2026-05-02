@@ -45,10 +45,12 @@
     <meta name="msapplication-TileColor" content="#2563eb">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="assets/hero-bg.webp" as="image">
     <link rel="preload" href="styles.css" as="style">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
     <!-- Theme Toggle (Fixed Position) -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
@@ -155,7 +157,7 @@
                 </div>
 
                 <div class="hero-social-proof">
-                    <p class="social-proof-text">Trusted by developers from</p>
+                    <p class="social-proof-text">Built by developers from leading companies</p>
                     <div class="company-logos">
                         <span class="company">Google</span>
                         <span class="company">Microsoft</span>
@@ -177,11 +179,35 @@
                     </div>
                     <div class="demo-content">
                         <div class="demo-screenshot">
-                            <img src="assets/app-preview.png" alt="CodeForLife Community App Preview" loading="lazy">
-                            <div class="demo-overlay">
-                                <button class="play-demo-btn" aria-label="Play demo">
-                                    <i class="fas fa-play"></i>
-                                </button>
+                            <div class="css-app-preview" aria-label="CodeForLife Community App Preview">
+                                <div class="app-preview-post">
+                                    <div class="app-preview-header">
+                                        <div class="css-avatar css-avatar-demo app-preview-avatar">JD</div>
+                                        <div class="app-preview-meta">
+                                            <div class="app-preview-line"></div>
+                                            <div class="app-preview-line short"></div>
+                                        </div>
+                                    </div>
+                                    <div class="app-preview-title-bar"></div>
+                                    <div class="app-preview-code">
+                                        <div class="app-preview-code-line w-80"></div>
+                                        <div class="app-preview-code-line w-55"></div>
+                                        <div class="app-preview-code-line w-70"></div>
+                                        <div class="app-preview-code-line w-45"></div>
+                                    </div>
+                                    <div class="app-preview-actions">
+                                        <div class="app-preview-btn"></div>
+                                        <div class="app-preview-btn"></div>
+                                        <div class="app-preview-btn wide"></div>
+                                    </div>
+                                </div>
+                                <div class="app-preview-comment">
+                                    <div class="css-avatar css-avatar-1 app-preview-avatar-sm">SC</div>
+                                    <div class="app-preview-comment-lines">
+                                        <div class="app-preview-line w-90"></div>
+                                        <div class="app-preview-line w-60"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,6 +238,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Wave Divider: Hero → Activity -->
+    <div class="wave-divider wave-from-hero" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,38 1440,30 L1440,60 L0,60 Z"/>
+        </svg>
+    </div>
 
     <!-- Live Community Activity -->
     <section class="live-activity">
@@ -339,7 +372,7 @@
                             <p>"CodeForLife has transformed how I connect with other developers. The community is incredibly supportive and the platform is beautifully designed."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="assets/avatar1.jpg" alt="Sarah Chen" loading="lazy">
+                            <div class="css-avatar css-avatar-1" aria-label="Sarah Chen">SC</div>
                             <div class="author-info">
                                 <div class="author-name">Sarah Chen</div>
                                 <div class="author-role">Senior Frontend Developer @Google</div>
@@ -352,7 +385,7 @@
                             <p>"The real-time collaboration features are game-changing. I've found amazing collaborators for my open source projects through this platform."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="assets/avatar2.jpg" alt="Marcus Johnson" loading="lazy">
+                            <div class="css-avatar css-avatar-2" aria-label="Marcus Johnson">MJ</div>
                             <div class="author-info">
                                 <div class="author-name">Marcus Johnson</div>
                                 <div class="author-role">DevOps Engineer @Microsoft</div>
@@ -365,7 +398,7 @@
                             <p>"As a junior developer, this community has been invaluable for learning and growth. The mentorship opportunities are incredible."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="assets/avatar3.jpg" alt="Emma Rodriguez" loading="lazy">
+                            <div class="css-avatar css-avatar-3" aria-label="Emma Rodriguez">ER</div>
                             <div class="author-info">
                                 <div class="author-name">Emma Rodriguez</div>
                                 <div class="author-role">Full Stack Developer @Startup</div>
@@ -376,6 +409,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Wave Divider: Community → Demo -->
+    <div class="wave-divider wave-from-secondary" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C480,0 960,60 1440,30 L1440,60 L0,60 Z"/>
+        </svg>
+    </div>
 
     <!-- Interactive Demo Section -->
     <section id="demo" class="section demo-section">
@@ -397,7 +437,7 @@
                     <div class="demo-tab-content active" id="demo-feed">
                         <div class="demo-post">
                             <div class="post-header">
-                                <img src="assets/demo-avatar.jpg" alt="John Doe" class="post-avatar">
+                                <div class="css-avatar css-avatar-demo post-avatar" aria-label="John Doe">JD</div>
                                 <div class="post-info">
                                     <h4>John Doe</h4>
                                     <span>Senior React Developer • 2 hours ago</span>
@@ -483,7 +523,7 @@ export default useApi;</code></pre>
                             </div>
                             <div class="chat-messages">
                                 <div class="message">
-                                    <img src="assets/avatar1.jpg" alt="Sarah" class="message-avatar">
+                                    <div class="css-avatar css-avatar-1 message-avatar" aria-label="Sarah">SC</div>
                                     <div class="message-content">
                                         <div class="message-header">
                                             <span class="message-author">Sarah Chen</span>
@@ -493,7 +533,7 @@ export default useApi;</code></pre>
                                     </div>
                                 </div>
                                 <div class="message">
-                                    <img src="assets/avatar2.jpg" alt="Marcus" class="message-avatar">
+                                    <div class="css-avatar css-avatar-2 message-avatar" aria-label="Marcus">MJ</div>
                                     <div class="message-content">
                                         <div class="message-header">
                                             <span class="message-author">Marcus Johnson</span>
@@ -513,7 +553,7 @@ export default useApi;</code></pre>
                     <div class="demo-tab-content" id="demo-profile">
                         <div class="profile-demo">
                             <div class="profile-header">
-                                <img src="assets/demo-avatar.jpg" alt="John Doe" class="profile-avatar">
+                                <div class="css-avatar css-avatar-demo profile-avatar" aria-label="John Doe">JD</div>
                                 <div class="profile-info">
                                     <h3>John Doe</h3>
                                     <p>Senior React Developer at TechCorp</p>
@@ -689,7 +729,26 @@ export default useApi;</code></pre>
                     <a href="#docs" class="btn btn-primary">View Architecture Details</a>
                 </div>
                 <div class="architecture-diagram">
-                    <img src="assets/microservices-diagram.png" alt="Microservices Architecture">
+                    <div class="css-arch-diagram">
+                        <div class="arch-gateway">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>API Gateway</span>
+                        </div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-services-row">
+                            <div class="arch-service-box"><i class="fas fa-user-shield"></i><span>Auth</span></div>
+                            <div class="arch-service-box"><i class="fas fa-user"></i><span>User</span></div>
+                            <div class="arch-service-box"><i class="fas fa-file-alt"></i><span>Post</span></div>
+                            <div class="arch-service-box"><i class="fas fa-bell"></i><span>Notify</span></div>
+                            <div class="arch-service-box"><i class="fas fa-comments"></i><span>Chat</span></div>
+                        </div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-infra-row">
+                            <div class="arch-infra-box"><i class="fas fa-database"></i><span>MySQL</span></div>
+                            <div class="arch-infra-box"><i class="fas fa-bolt"></i><span>Redis</span></div>
+                            <div class="arch-infra-box"><i class="fas fa-stream"></i><span>Kafka</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -744,8 +803,8 @@ export default useApi;</code></pre>
                 </div>
                 <div class="api-links">
                     <a href="#docs" class="btn btn-primary">View Full API Documentation</a>
-                    <a href="http://localhost:8081/swagger-ui.html" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Swagger UI
+                    <a href="http://localhost:8081/swagger-ui.html" class="btn btn-secondary btn-local-only" target="_blank" rel="noopener noreferrer" title="Available in local development environment">
+                        <i class="fas fa-laptop-code"></i> Swagger UI <span class="local-badge">local</span>
                     </a>
                 </div>
             </div>
@@ -918,6 +977,46 @@ export default useApi;</code></pre>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="section waitlist-section">
+        <div class="container">
+            <div class="waitlist-card">
+                <div class="waitlist-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Beta Access</span>
+                </div>
+                <h2 class="waitlist-title">Be First to <span class="gradient-text">Experience</span> It</h2>
+                <p class="waitlist-subtitle">Join the waitlist and get early access to CodeForLife Community. Limited spots available for our beta program.</p>
+                <div class="waitlist-perks">
+                    <div class="waitlist-perk"><i class="fas fa-check-circle"></i><span>Early access to all features</span></div>
+                    <div class="waitlist-perk"><i class="fas fa-check-circle"></i><span>Founding member badge</span></div>
+                    <div class="waitlist-perk"><i class="fas fa-check-circle"></i><span>Priority support &amp; feedback</span></div>
+                </div>
+                <form id="waitlist-form" class="waitlist-form" novalidate>
+                    <div class="waitlist-fields">
+                        <input type="text" id="waitlist-name" class="waitlist-input" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+                        <input type="email" id="waitlist-email" class="waitlist-input" placeholder="your@email.com" autocomplete="email" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary waitlist-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Join Waitlist</span>
+                        </button>
+                    </div>
+                    <p class="waitlist-privacy"><i class="fas fa-lock"></i> No spam, ever. Unsubscribe anytime.</p>
+                    <div id="waitlist-message" class="waitlist-message" role="alert" aria-live="polite"></div>
+                </form>
+                <div class="waitlist-count">
+                    <div class="waitlist-avatars">
+                        <div class="css-avatar css-avatar-1 waitlist-mini-avatar">SC</div>
+                        <div class="css-avatar css-avatar-2 waitlist-mini-avatar">MJ</div>
+                        <div class="css-avatar css-avatar-3 waitlist-mini-avatar">ER</div>
+                        <div class="css-avatar css-avatar-demo waitlist-mini-avatar">+</div>
+                    </div>
+                    <span class="waitlist-count-text"><strong>1,247</strong> developers already joined</span>
                 </div>
             </div>
         </div>

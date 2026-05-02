@@ -2425,3 +2425,653 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+/* ============================================
+   Scroll Progress Bar
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ============================================
+   Theme Toggle — Move to bottom-right
+   ============================================ */
+.theme-toggle {
+  top: auto;
+  bottom: 5.5rem;
+  transform: none;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   Wave Section Dividers
+   ============================================ */
+.wave-divider {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.wave-from-hero {
+  background: var(--gradient-primary);
+}
+
+.wave-from-hero svg path {
+  fill: var(--bg-secondary);
+}
+
+.wave-from-secondary {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .wave-from-secondary {
+  background: var(--bg-tertiary);
+}
+
+.wave-from-secondary svg path {
+  fill: var(--bg-primary);
+}
+
+[data-theme="dark"] .wave-from-secondary svg path {
+  fill: var(--bg-primary);
+}
+
+/* ============================================
+   CSS Avatar Replacements
+   ============================================ */
+.css-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-family: var(--font-family);
+  color: white;
+  flex-shrink: 0;
+  user-select: none;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.css-avatar-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.css-avatar-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.css-avatar-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.css-avatar-demo { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #1e293b; }
+
+.testimonial-author .css-avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 0.95rem;
+}
+
+.post-avatar.css-avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 0.9rem;
+}
+
+.profile-avatar.css-avatar {
+  width: 80px;
+  height: 80px;
+  font-size: 1.4rem;
+}
+
+.message-avatar.css-avatar {
+  width: 35px;
+  height: 35px;
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   CSS App Preview Mock UI
+   ============================================ */
+.css-app-preview {
+  background: var(--bg-tertiary);
+  padding: 1.25rem;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 220px;
+}
+
+.app-preview-post {
+  background: var(--bg-primary);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+[data-theme="dark"] .app-preview-post {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.app-preview-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.app-preview-avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 0.7rem;
+}
+
+.app-preview-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.app-preview-line {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.app-preview-line.short  { width: 55%; }
+.app-preview-line.w-90   { width: 90%; }
+.app-preview-line.w-60   { width: 60%; }
+
+.app-preview-title-bar {
+  height: 13px;
+  border-radius: 6px;
+  width: 72%;
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s 0.1s infinite;
+}
+
+.app-preview-code {
+  background: #1e293b;
+  border-radius: 7px;
+  padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.app-preview-code-line {
+  height: 7px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.app-preview-code-line.w-80 { width: 80%; }
+.app-preview-code-line.w-55 { width: 55%; background: rgba(102, 126, 234, 0.45); }
+.app-preview-code-line.w-70 { width: 70%; }
+.app-preview-code-line.w-45 { width: 45%; background: rgba(240, 147, 251, 0.45); }
+
+.app-preview-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-preview-btn {
+  height: 26px;
+  width: 56px;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.app-preview-btn.wide { width: 76px; }
+
+.app-preview-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.app-preview-avatar-sm {
+  width: 26px;
+  height: 26px;
+  font-size: 0.6rem;
+}
+
+.app-preview-comment-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ============================================
+   CSS Microservices Architecture Diagram
+   ============================================ */
+.css-arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 1.5rem 0.5rem;
+}
+
+.arch-gateway {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.arch-connector {
+  width: 2px;
+  height: 22px;
+  background: var(--border-color);
+  position: relative;
+}
+
+.arch-connector::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--border-color);
+}
+
+.arch-services-row,
+.arch-infra-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.arch-service-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 68px;
+  transition: var(--transition);
+}
+
+.arch-service-box:hover {
+  border-color: var(--primary-light);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.arch-service-box i,
+.arch-infra-box i {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.arch-infra-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 78px;
+  transition: var(--transition);
+}
+
+.arch-infra-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* ============================================
+   Waitlist Section
+   ============================================ */
+.waitlist-section {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.waitlist-card {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.waitlist-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.waitlist-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.waitlist-perks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.waitlist-perk {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.waitlist-perk i {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.waitlist-form {
+  margin-bottom: 2rem;
+}
+
+.waitlist-fields {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.waitlist-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.85rem 1.2rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.waitlist-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.waitlist-input.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.waitlist-submit {
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.waitlist-privacy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.waitlist-privacy i { font-size: 0.7rem; }
+
+.waitlist-message {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 1.4em;
+}
+
+.waitlist-message.success { color: var(--accent-color); }
+.waitlist-message.error   { color: #ef4444; }
+
+.waitlist-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  color: var(--accent-color);
+}
+
+.waitlist-success i {
+  font-size: 3rem;
+}
+
+.waitlist-success p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.waitlist-success strong {
+  color: var(--text-primary);
+}
+
+.waitlist-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.waitlist-avatars {
+  display: flex;
+}
+
+.waitlist-mini-avatar {
+  width: 30px;
+  height: 30px;
+  font-size: 0.65rem;
+  border: 2px solid var(--bg-secondary);
+  margin-left: -8px;
+}
+
+.waitlist-avatars .waitlist-mini-avatar:first-child {
+  margin-left: 0;
+}
+
+.waitlist-count-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.waitlist-count-text strong {
+  color: var(--text-primary);
+}
+
+/* ============================================
+   Local Dev Badge — Swagger link
+   ============================================ */
+.btn-local-only {
+  opacity: 0.55;
+  border-style: dashed;
+  pointer-events: none;
+  cursor: default;
+}
+
+.local-badge {
+  font-size: 0.7em;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+/* ============================================
+   Floating Hero Cards — Fix overflow
+   ============================================ */
+.feature-card:nth-child(1) {
+  top: 8%;
+  right: -4%;
+}
+
+.feature-card:nth-child(2) {
+  bottom: 32%;
+  right: -4%;
+}
+
+.feature-card:nth-child(3) {
+  top: 65%;
+  left: -4%;
+}
+
+/* ============================================
+   Nav Responsive — hide lower-priority links
+   ============================================ */
+@media (max-width: 1100px) {
+  .nav-link[href="#architecture"],
+  .nav-link[href="#docs"] {
+    display: none;
+  }
+}
+
+/* ============================================
+   Responsive — Waitlist & Arch Diagram
+   ============================================ */
+@media (max-width: 768px) {
+  .waitlist-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .waitlist-fields {
+    flex-direction: column;
+  }
+
+  .waitlist-input,
+  .waitlist-submit {
+    width: 100%;
+  }
+
+  .waitlist-perks {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .arch-services-row,
+  .arch-infra-row {
+    gap: 0.35rem;
+  }
+
+  .arch-service-box,
+  .arch-infra-box {
+    min-width: 58px;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .wave-divider svg {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .waitlist-count {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
